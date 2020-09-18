@@ -1,0 +1,8 @@
+Atom < 설치 : 텍스트에디터
+   아톰테마 seti-ui / Syntax Theme : Atom Material Dark
+   플러그인 language-vue / emmet
+
+node.js < nodejs.org : 프로토 타이핑 제공서버
+  노드는 설치후 명령프롬프트에서 node -v를 입력해서 버전확인
+
+VuejsDevTools < 크롬 확장플러그인 : 디버깅, 및 분석
