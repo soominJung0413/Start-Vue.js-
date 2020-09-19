@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue Local Range Component</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <button>지역 범위 컴포넌트 등록</button>
+      <my-local-component/>
+    </div>
+
+    <script type="text/javascript">
+
+      var cmp = {
+         template : '<div>지역 범위 컴포넌트가 등록되었습니다!</div>'
+      };
+
+      new Vue({
+        el:'#app',
+        components:{
+          'my-local-component':cmp
+        }
+      });
+
+    </script>
+  </body>
+</html>
