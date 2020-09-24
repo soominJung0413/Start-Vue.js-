@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Quiz-2</title>
+  <script src="../../js/vendor/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <sibling-component v-bind:another = 'message'></sibling-component>
+  </div>
+
+  <script type="text/javascript">
+    Vue.component('sibling-component',{
+      props: ['another'],
+      template: '<h5> {{ another }} </h5>'
+    })
+
+    new Vue({
+      el:'#app',
+      data:{
+        message: 'This is Quiz2 Data :)'
+      }
+    })
+  </script>
+</body>
+</html>

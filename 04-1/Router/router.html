@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Router Basic</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+  <script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js" ></script>
+</head>
+<body>
+  <div id="app">
+    <h1>뷰 라우터 예제</h1>
+    <p>
+    <router-link to="/main">Main 컴포넌트로 이동</router-link>
+    <router-link to="/login">Login 으로 이동</router-link>
+    </p>
+    <router-view></router-view>
+  </div>
+
+  <script type="text/javascript">
+    var Main = {template: '<div>main</div>'};
+    var Login = {template: '<div>Login</div>'};
+
+    //뷰 라우터 생성 매개 값
+    var routes = [
+      { path:'/main', component: Main }, // path 와 compoent 를 가진 Object Array를 라우터에 등록해야만 한다.
+      { path:'/login', component: Login }
+    ];
+
+    var router = new VueRouter({
+      routes
+    });
+
+    var app = new Vue({
+      router// 라우터는 라우터객체를 주면 된다.
+    }).$mount('#app');//뷰 인스턴스에 붙임
+  </script>
+</body>
+</html>

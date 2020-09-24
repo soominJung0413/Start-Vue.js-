@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Quiz-1</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+    <sibling-component v-bind:mydata='message'></sibling-component>
+    </div>
+
+    <script type="text/javascript">
+      Vue.component('sibling-component',{
+        props : ['mydata'],
+        template : '<div> {{ mydata }}</div>'
+      })
+
+      new Vue({
+        el:'#app',
+        data:{
+          message : 'This is Quiz Data!'
+        }
+      })
+    </script>
+</body>
+</html>
