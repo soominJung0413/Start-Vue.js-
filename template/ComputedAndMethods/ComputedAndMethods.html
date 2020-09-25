@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Computed And Methods</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+  <script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js" ></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <p>{{ message }}</p>
+    <button v-on:click="reverseMsg">문자열 반전</button>
+  </div>
+
+
+  <script type="text/javascript">
+    new Vue({
+      el: '#app',
+      data : {
+        message : 'Hello Vue.js!'
+      },
+      methods : {<!-- methods 속성은 호출시만 동작한다. -->
+        reverseMsg : function(){
+          this.message = this.message.split('').reverse().join('');
+          return this.message;
+        }
+      }
+    });
+  </script>
+</body>
+</html>
