@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Watch Attribute</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+  <script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js" ></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <input v-model='messge'>
+  </div>
+
+  <script type="text/javascript">
+  new Vue({
+    el: '#app',
+    data: {
+      messge : 'Hello Vue.js!'
+    },
+    watch: {
+      messge : function(data){
+        console.log('message의 값이 바뀝니다. : ', data);
+      }
+    }
+  });
+  </script>
+</body>
+</html>

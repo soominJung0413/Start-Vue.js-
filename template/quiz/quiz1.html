@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>template quiz</title>
+
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+  <div id="app">
+    <span v-bind:id=uid >
+      <header>
+      {{ message }} <br>
+      {{ quiz }}
+      </header>
+      <section>
+        <p v-bind:id="uid"></p>
+        <button v-on:click="clickBtn"></button>
+        <h5 v-if="flag">V-If Check</h5>
+      </section>
+  </div>
+
+<script type="text/javascript">
+var app = new Vue({
+  el:'#app',
+  data : {
+    message : 'Hello Vue.js!',
+    quiz: 'Hello Quiz!',
+    uid : 20,
+    flag : true
+  },
+  methods: {
+    // clickBtn : function(event){
+    //   console.log(event);
+    //   alert('V-On !');
+    // }
+    clickBtn(event){
+      console.log(event);
+      alert('V-On!')
+    }
+  }
+});
+</script>
+</body>
+</html>
