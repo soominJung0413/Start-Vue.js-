@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Components Communication</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id='app'>
+      <child-component v-bind:propsdata='message'></child-component>
+    </div>
+
+<script>
+
+Vue.component(
+  'child-component',{
+    props:['propsdata'],
+    template : '<p>{{propsdata}}</p>'
+  }
+)
+
+new Vue({
+  el:'#app',
+  data: {
+    message : 'Hello Vue! passed from Parent Component'
+  }
+})
+</script>
+
+  </body>
+</html>

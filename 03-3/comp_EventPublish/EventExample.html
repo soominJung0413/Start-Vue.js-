@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Event Publish</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+
+    <div id="app">
+      <child-component v-on:show-log ="printText"></child-component>
+    </div>
+
+    <script type="text/javascript">
+      Vue.component('child-component',{
+        template : '<button v-on:click="showLog" >Publish Event</button>',
+        methods : {
+          showLog : function(){
+            this.$emit('show-log');
+          }
+        }
+      });
+
+      new Vue({
+        el:'#app',
+        data: {
+          message:'Hello Vue.js! :)'
+        },
+        methods:{
+          printText: function(){
+            console.log('received an event');
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
